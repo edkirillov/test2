@@ -1,0 +1,110 @@
+{
+    "exclusions": [
+    {
+        "cookies_exclusions": ["okta-oauth-redirect-params", "x-csrf-token", "messages", "trifacta_browser_support", "okta-oauth-state", "okta-oauth-nonce", "_trifacta_session.sig", "ai_session"],
+        "query_arg_exclusions": ["uri", "dimension_filters", "test_url", "filter", "return_url", "scope"],
+        "body_param_exclusions": ["[logArgs][]", "[stack]", "message-url"]
+    },
+    {
+        "rule_group_name": "RFI",
+        "blanket_exclusions": [],
+        "specific_rules": [
+        {
+            "rule_id": "931130",
+            "details": [
+                {
+                    "match_variable": "QueryStringArgNames",
+                    "operator": "Equals",
+                    "selector": "iss"
+                }
+            ]
+        }
+        ]
+    },
+    {
+        "rule_group_name": "JAVA",
+        "blanket_exclusions": ["944130", "944240"],
+        "specific_rules": [
+        {
+            "rule_id": "",
+            "details": [
+                {
+                    "match_variable": "",
+                    "operator": "",
+                    "selector": ""
+                }
+            ]
+        }
+        ]
+    },
+    {
+        "rule_group_name": "LFI",
+        "blanket_exclusions": ["930110"],
+        "specific_rules": [
+        {
+            "rule_id": "",
+            "details": [
+                {
+                    "match_variable": "",
+                    "operator": "",
+                    "selector": ""
+                }
+            ]
+        }
+        ]
+    },
+    {
+        "rule_group_name": "PHP",
+        "blanket_exclusions": ["933100", "933110", "933120", "933130", "933140", "933150", "933151", "933160", "933170", "933180"],
+        "specific_rules": [
+        {
+            "rule_id": "",
+            "details": [
+                {
+                    "match_variable": "",
+                    "operator": "",
+                    "selector": ""
+                }
+            ]
+        }
+        ]
+    },
+    {
+        "rule_group_name": "SQLI",
+        "blanket_exclusions": [],
+        "specific_rules": [
+        {
+            "rule_id": "942450",
+            "details": [
+                {
+                    "match_variable": "RequestCookieNames",
+                    "operator": "Equals",
+                    "selector": "_qa"
+                },
+                {
+                    "match_variable": "RequestBodyPostArgNames",
+                    "operator": "Equals",
+                    "selector": "SAMLResponse"
+                }
+            ]
+        }
+        ]
+    },
+    {
+        "rule_group_name": "XSS",
+        "blanket_exclusions": ["941320"],
+        "specific_rules": [
+        {
+            "rule_id": "941340",
+            "details": [
+                {
+                    "match_variable": "RequestBodyPostArgNames",
+                    "operator": "Equals",
+                    "selector": "attachments"
+                }
+            ]
+        }
+        ]
+    }
+    ]
+}
