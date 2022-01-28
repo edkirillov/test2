@@ -15,7 +15,7 @@
             }]
         }
     ],
-    "cookies_exclusions": "okta-oauth-redirect-params,x-csrf-token,messages,trifacta_browser_support,okta-oauth-state,okta-oauth-nonce,_trifacta_session.sig,ai_session",
+    "cookies_exclusions": ["okta-oauth-redirect-params", "x-csrf-token", "messages", "trifacta_browser_support", "okta-oauth-state", "okta-oauth-nonce", "_trifacta_session.sig" ,"ai_session"],
     "query_arg_exclusions": "uri,dimension_filters,test_url,filter,return_url,scope",
     "body_param_exclusions": "[logArgs][],[stack],message-url",
     "local_exclusions":
