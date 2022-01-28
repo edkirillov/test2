@@ -31,6 +31,22 @@
             }]
         },
         {
+            "group_name": "SQLI",
+            "disable_rules": [],
+            "rule_exclusions": [{
+                "rule_id": "942450",
+                "RequestBodyPostArgNames": [],
+                "RequestCookieNames": ["_ga", "SAMLResponse"],
+                "QueryStringArgNames": []
+            },
+            {
+                "rule_id": "942200",
+                "RequestBodyPostArgNames": ["attachments", "message-headers"],
+                "RequestCookieNames": [],
+                "QueryStringArgNames": []
+            }]
+        },
+        {
             "group_name": "RFI",
             "disable_rules": [],
             "rule_exclusions": [{
