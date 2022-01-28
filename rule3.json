@@ -25,7 +25,7 @@
             "disable_rules": ["941320"],
             "rule_exclusions": [{
                 "rule_id": "941340",
-                "RequestBodyPostArgNames": "attachments,message-headers",
+                "RequestBodyPostArgNames": ["attachments", "message-headers"],
                 "RequestCookieNames": [],
                 "QueryStringArgNames": []
             }]
