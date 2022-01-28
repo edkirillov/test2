@@ -16,53 +16,53 @@
         }
     ],
     "cookies_exclusions": ["okta-oauth-redirect-params", "x-csrf-token", "messages", "trifacta_browser_support", "okta-oauth-state", "okta-oauth-nonce", "_trifacta_session.sig" ,"ai_session"],
-    "query_arg_exclusions": "uri,dimension_filters,test_url,filter,return_url,scope",
-    "body_param_exclusions": "[logArgs][],[stack],message-url",
+    "query_arg_exclusions": ["uri", "dimension_filters", "test_url", "filter", "return_url", "scope"],
+    "body_param_exclusions": ["[logArgs][]", "[stack]", "message-url"],
     "local_exclusions":
     [
         {
             "group_name": "XSS",
-            "disable_rules": "941320",
+            "disable_rules": ["941320"],
             "rule_exclusions": [{
                 "rule_id": "941340",
                 "RequestBodyPostArgNames": "attachments,message-headers",
-                "RequestCookieNames": null,
-                "QueryStringArgNames": null
+                "RequestCookieNames": [],
+                "QueryStringArgNames": []
             }]
         },
         {
             "group_name": "RFI",
-            "disable_rules": null,
+            "disable_rules": [],
             "rule_exclusions": [{
                 "rule_id": "931130",
-                "RequestBodyPostArgNames": null,
-                "RequestCookieNames": null,
-                "QueryStringArgNames": "iss"
+                "RequestBodyPostArgNames": [],
+                "RequestCookieNames": [],
+                "QueryStringArgNames": ["iss"]
             }]
         },
         {
             "group_name": "PHP",
-            "disable_rules": "933100,933110,933120,933130,933140,933150,933151,933160,933170,933180",
+            "disable_rules": ["933100", "933110", "933120", "933130", "933140", "933150", "933151", "933160", "933170", "933180"],
             "rule_exclusions": []
         },
         {
             "group_name": "LFI",
-            "disable_rules": "930110",
+            "disable_rules": ["930110"],
             "rule_exclusions": []
         },
         {
             "group_name": "JAVA",
-            "disable_rules": "944130,944240",
+            "disable_rules": ["944130", "944240"],
             "rule_exclusions": []
         },
         {
             "group_name": "PROTOCOL-ATTACK",
-            "disable_rules": null,
+            "disable_rules": [],
             "rule_exclusions": [{
                 "rule_id": "921151",
-                "RequestBodyPostArgNames": null,
-                "RequestCookieNames": null,
-                "QueryStringArgNames": "error"
+                "RequestBodyPostArgNames": [],
+                "RequestCookieNames": [],
+                "QueryStringArgNames": ["error"]
             }]
         }
     ]
