@@ -23,6 +23,7 @@
         {
             "group_name": "XSS",
             "disable_rules": ["941320"],
+            "group_exclusions": [],
             "rule_exclusions": [{
                 "rule_id": "941340",
                 "RequestBodyPostArgNames": ["attachments", "message-headers"],
@@ -33,22 +34,22 @@
         {
             "group_name": "SQLI",
             "disable_rules": [],
+            "group_exclusions": [{
+                "RequestBodyPostArgNames": ["message-headers", "attachments"],
+                "RequestCookieNames": [],
+                "QueryStringArgNames": []                
+            }],
             "rule_exclusions": [{
                 "rule_id": "942450",
-                "RequestBodyPostArgNames": [],
+                "RequestBodyPostArgNames": ["SAMLResponse"],
                 "RequestCookieNames": ["_ga", "SAMLResponse"],
-                "QueryStringArgNames": []
-            },
-            {
-                "rule_id": "942200",
-                "RequestBodyPostArgNames": ["attachments", "message-headers"],
-                "RequestCookieNames": [],
                 "QueryStringArgNames": []
             }]
         },
         {
             "group_name": "RFI",
             "disable_rules": [],
+            "group_exclusions": [],
             "rule_exclusions": [{
                 "rule_id": "931130",
                 "RequestBodyPostArgNames": [],
@@ -59,21 +60,25 @@
         {
             "group_name": "PHP",
             "disable_rules": ["933100", "933110", "933120", "933130", "933140", "933150", "933151", "933160", "933170", "933180"],
+            "group_exclusions": [],
             "rule_exclusions": []
         },
         {
             "group_name": "LFI",
             "disable_rules": ["930110"],
+            "group_exclusions": [],
             "rule_exclusions": []
         },
         {
             "group_name": "JAVA",
             "disable_rules": ["944130", "944240"],
+            "group_exclusions": [],
             "rule_exclusions": []
         },
         {
             "group_name": "PROTOCOL-ATTACK",
             "disable_rules": [],
+            "group_exclusions": [],
             "rule_exclusions": [{
                 "rule_id": "921151",
                 "RequestBodyPostArgNames": [],
