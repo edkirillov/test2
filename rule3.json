@@ -2,14 +2,14 @@
     "custom_rules":
     [
         {
-            "rule_name": "noderce934013",
+            "rule_name": "noderce934013-test",
             "enabled": "true",
             "priority": "100",
             "type": "MatchRule",
             "action": "Block",
             "match_conditions": [{
                 "match_variable": "RequestBody",
-                "operator": "RegEx",
+                "operator": "Regex",
                 "negation_condition": "false",
                 "match_values": ["(?:_(?:\\$\\$ND_FUNC\\$\\$_|_js_function)|(?:new\\s+Function|\\beval)\\s*\\(|String\\s*\\.\\s*fromCharCode|function\\s*\\(\\s*\\)\\s*{|module\\.exports\\s*=|this\\.constructor)"]
             }]
@@ -46,8 +46,14 @@
             "rule_exclusions": [{
                 "rule_id": "942450",
                 "RequestBodyPostArgNames": ["SAMLResponse"],
-                "RequestCookieNames": ["_ga", "SAMLResponse"],
+                "RequestCookieNames": ["_ga", "SAMLResponse", "intercom-session-bibdues0"],
                 "QueryStringArgNames": []
+            },
+            {
+                "rule_id": "942200",
+                "RequestBodyPostArgNames": [],
+                "RequestCookieNames": [],
+                "QueryStringArgNames": ["segments[]"]
             }]
         },
         {
@@ -108,6 +114,21 @@
                 "RequestBodyPostArgNames": [],
                 "RequestCookieNames": [],
                 "QueryStringArgNames": ["error"]
+            }]
+        },
+        {
+            "group_name": "RCE",
+            "disable_rules": [],
+            "group_exclusions": {
+                "RequestBodyPostArgNames": [],
+                "RequestCookieNames": [],
+                "QueryStringArgNames": []                
+            },
+            "rule_exclusions": [{
+                "rule_id": "932150",
+                "RequestBodyPostArgNames": [],
+                "RequestCookieNames": ["ai_user"],
+                "QueryStringArgNames": []
             }]
         }
     ]
