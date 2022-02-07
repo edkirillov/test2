@@ -9,7 +9,7 @@
             "action": "Block",
             "match_conditions": [{
                 "match_variable": "RequestBody",
-                "operator": "Regex",
+                "operator": "RegEx",
                 "negation_condition": "false",
                 "match_values": ["(?:_(?:\\$\\$ND_FUNC\\$\\$_|_js_function)|(?:new\\s+Function|\\beval)\\s*\\(|String\\s*\\.\\s*fromCharCode|function\\s*\\(\\s*\\)\\s*{|module\\.exports\\s*=|this\\.constructor)"]
             }]
