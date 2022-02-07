@@ -2,7 +2,7 @@
     "custom_rules":
     [
         {
-            "rule_name": "noderce934013-test",
+            "rule_name": "noderce934013",
             "enabled": "true",
             "priority": "100",
             "type": "MatchRule",
